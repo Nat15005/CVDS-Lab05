@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Number</title>
+    <!-- Agregar enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Guess Number</h1>
+    <p>Prize: $<span th:text="${prize}"></span></p>
+    <form action="/guess" method="post">
+        <div class="form-group">
+            <label for="number">Número:</label>
+            <input type="number" class="form-control" id="number" name="number" min="1" max="10">
+        </div>
+        <button type="submit" class="btn btn-primary">Adivinar</button>
+    </form>
+    <p th:text="${message}"></p>
+    <a href="/reset" class="btn btn-danger">Reiniciar</a>
+</div>
+</body>
+</html>
